@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Home - Temperature</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Temperature Monitor</h1>
+        <div id="clock"></div>
+      </header>
+
+      <main>
+        <div class="temp-display">
+          <p>Current Temperature:</p>
+          <h2 id="temp">22°C</h2>
+        </div>
+      </main>
+
+      <nav>
+        <a href="lights.html">Lights</a>
+        <a href="camera.html">Camera Feed</a>
+      </nav>
+    </div>
+
+    <script>
+      function updateClock() {
+        document.getElementById("clock").innerText =
+          new Date().toLocaleTimeString();
+      }
+      setInterval(updateClock, 1000);
+      updateClock();
+
+      // Simulated temperature update
+      setInterval(() => {
+        const temp = 20 + Math.floor(Math.random() * 5);
+        document.getElementById("temp").innerText = `${temp}°C`;
+      }, 3000);
+    </script>
+  </body>
+</html>

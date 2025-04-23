@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Home - Lights</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Smart Light Control</h1>
+        <div id="clock"></div>
+      </header>
+
+      <main>
+        <div class="light-control">
+          <button class="switch on" onclick="toggleLight(true)">Turn On</button>
+          <button class="switch off" onclick="toggleLight(false)">
+            Turn Off
+          </button>
+          <div id="light-status">Light is OFF</div>
+        </div>
+      </main>
+
+      <nav>
+        <a href="temperature.html">Temperature</a>
+        <a href="camera.html">Camera Feed</a>
+      </nav>
+    </div>
+
+    <script>
+      function updateClock() {
+        const clock = document.getElementById("clock");
+        clock.innerText = new Date().toLocaleTimeString();
+      }
+      setInterval(updateClock, 1000);
+      updateClock();
+
+      function toggleLight(status) {
+        const statusDiv = document.getElementById("light-status");
+        statusDiv.textContent = status ? "Light is ON" : "Light is OFF";
+      }
+    </script>
+  </body>
+</html>

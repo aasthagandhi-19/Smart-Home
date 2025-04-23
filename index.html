@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Home Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Welcome to Your Smart Home</h1>
+        <div id="clock"></div>
+      </header>
+
+      <main class="dashboard">
+        <div class="card" onclick="location.href='lights.html'">
+          <h2>Light Control</h2>
+          <p>Switch lights ON/OFF remotely</p>
+        </div>
+        <div class="card" onclick="location.href='temperature.html'">
+          <h2>Temperature Monitor</h2>
+          <p>View real-time temperature data</p>
+        </div>
+        <div class="card" onclick="location.href='camera.html'">
+          <h2>Camera Feed</h2>
+          <p>Monitor your home live</p>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      function updateClock() {
+        document.getElementById("clock").innerText =
+          new Date().toLocaleTimeString();
+      }
+      setInterval(updateClock, 1000);
+      updateClock();
+    </script>
+  </body>
+</html>
