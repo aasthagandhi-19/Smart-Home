@@ -1,4 +1,3 @@
-/* GLOBAL STYLES */
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
@@ -9,15 +8,9 @@ body {
 }
 
 @keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .container {
@@ -26,7 +19,6 @@ body {
   margin: auto;
 }
 
-/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
@@ -44,7 +36,6 @@ h1 {
   font-weight: bold;
 }
 
-/* INDEX CARDS */
 .dashboard {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -76,39 +67,21 @@ h1 {
   color: #555;
 }
 
-/* COMPONENT STYLES */
-.light-control,
-.temp-display,
-.camera-feed {
-  background: #ffffffdd;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  animation: popIn 0.6s ease-out;
+.icon-card {
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
-.switch {
-  padding: 10px 20px;
-  margin: 10px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+.weather-icon {
+  color: #00aaff;
 }
 
-.switch.on {
-  background-color: #4caf50;
-  color: white;
+.light-icon {
+  color: #ffc107;
 }
 
-.switch.off {
-  background-color: #f44336;
-  color: white;
-}
-
-.switch:hover {
-  opacity: 0.9;
+.camera-icon {
+  color: #e74c3c;
 }
 
 nav {
@@ -127,25 +100,54 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* ANIMATIONS */
+/* Menu toggle and dropdown */
+.menu-toggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  color: #fff;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background-color: #ffffffee;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  width: 220px;
+  animation: popIn 0.5s ease-out;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  transition: 0.3s;
+}
+
+.dropdown a:last-child {
+  border-bottom: none;
+}
+
+.dropdown a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Animations */
 @keyframes slideIn {
-  from {
-    transform: translateX(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
 @keyframes popIn {
-  from {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
