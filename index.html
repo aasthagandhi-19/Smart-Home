@@ -1,41 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smart Home Dashboard</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <h1>Welcome to Your Smart Home</h1>
-        <div id="clock"></div>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Home Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="menu-toggle" onclick="toggleDropdown()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div id="dropdownMenu" class="dropdown">
+    <a href="#">Add Account (Gmail)</a>
+    <a href="#">Help & Support: 1800-123-4567</a>
+    <a href="#">Light Settings & Scheduling</a>
+    <a href="#">SOS Emergency Contact</a>
+  </div>
 
-      <main class="dashboard">
-        <div class="card" onclick="location.href='lights.html'">
-          <h2>Light Control</h2>
-          <p>Switch lights ON/OFF remotely</p>
-        </div>
-        <div class="card" onclick="location.href='temperature.html'">
-          <h2>Temperature Monitor</h2>
-          <p>View real-time temperature data</p>
-        </div>
-        <div class="card" onclick="location.href='camera.html'">
-          <h2>Camera Feed</h2>
-          <p>Monitor your home live</p>
-        </div>
-      </main>
-    </div>
+  <div class="container">
+    <header>
+      <h1>Welcome to Your Smart Home</h1>
+      <div id="clock"></div>
+    </header>
 
-    <script>
-      function updateClock() {
-        document.getElementById("clock").innerText =
-          new Date().toLocaleTimeString();
-      }
-      setInterval(updateClock, 1000);
-      updateClock();
-    </script>
-  </body>
+    <main class="dashboard">
+      <div class="card" onclick="location.href='lights.html'">
+        <div class="icon-card light-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h2>Light Control</h2>
+        <p>Switch lights ON/OFF remotely</p>
+      </div>
+      <div class="card" onclick="location.href='temperature.html'">
+        <div class="icon-card weather-icon">
+          <i class="fas fa-cloud-sun"></i>
+        </div>
+        <h2>Temperature Monitor</h2>
+        <p>View real-time temperature data</p>
+      </div>
+      <div class="card" onclick="location.href='camera.html'">
+        <div class="icon-card camera-icon">
+          <i class="fas fa-video"></i>
+        </div>
+        <h2>Camera Feed</h2>
+        <p>Monitor your home live</p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function updateClock() {
+      document.getElementById("clock").innerText = new Date().toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    function toggleDropdown() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
 </html>
